@@ -14,7 +14,7 @@ public class GardenMetricsServiceImpl implements GardenMetricsService {
     @Autowired
     private GardenRepository gardenRepository;
 
-    private static final int MINUTES_OFFSET = 10;
+    public static final int MINUTES_OFFSET = 10;
 
     public GardenMetrics getCurrentGardenMetrics() {
         LocalDateTime now = LocalDateTime.now();
