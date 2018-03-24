@@ -35,6 +35,6 @@ public class MetricsController {
         } else if (startDate != null) {
             return gardenMetricsService.getGardenMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
         }
-        return ImmutableList.of(gardenMetricsService.getCurrentGardenMetrics());
+        return  gardenMetricsService.getAll();
     }
 }

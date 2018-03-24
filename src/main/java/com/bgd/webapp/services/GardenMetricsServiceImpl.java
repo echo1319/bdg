@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,6 +16,13 @@ public class GardenMetricsServiceImpl implements GardenMetricsService {
     private GardenRepository gardenRepository;
 
     public static final int MINUTES_OFFSET = 10;
+
+    @Override
+    public List<GardenMetrics> getAll() {
+        List<GardenMetrics> gardenMetrics = new ArrayList<>();
+        gardenRepository.findAll().forEach(gardenMetrics::add);
+        return gardenMetrics;
+    }
 
     public GardenMetrics getCurrentGardenMetrics() {
         LocalDateTime now = LocalDateTime.now();

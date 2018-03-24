@@ -1,0 +1,39 @@
+/*CREATE TABLE garden (  id                 VARCHAR(255),  air_temperature    DOUBLE,
+  mdate              VARCHAR(255),  radiation DOUBLE, relevant_humidity  DOUBLE,
+  site               VARCHAR(255),  sphere_temperature DOUBLE,
+  wind_direction     DOUBLE,  wind_speed         DOUBLE,  PRIMARY KEY (id)
+);
+
+CREATE TABLE review (
+  id            INTEGER,
+  comments      VARCHAR(255),
+  review_date   DATE,
+  rating        INTEGER,
+  reviewer_name VARCHAR(255),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE sintagma (
+  id                 VARCHAR(255),
+  air_temperature    DOUBLE,
+  mdate              VARCHAR(255),
+  radiation          DOUBLE,
+  relevant_humidity  DOUBLE,
+  site               VARCHAR(255),
+  sphere_temperature DOUBLE,
+  wind_direction     DOUBLE,
+  wind_speed         DOUBLE,
+  PRIMARY KEY (id)
+);
+CREATE TABLE visitor (
+  id             INTEGER,
+  vdate          VARCHAR(255),
+  day_of_week    VARCHAR(255),
+  number_of_week INTEGER,
+  serial_num     VARCHAR(255),
+  site           VARCHAR(255),
+  visitors       INTEGER,
+  PRIMARY KEY (id)
+);
+
+*/

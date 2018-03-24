@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface GardenMetricsService {
+    List<GardenMetrics> getAll();
+
     GardenMetrics getCurrentGardenMetrics();
 
     List<GardenMetrics> getGardenMetricsByDate(LocalDateTime localDateTime);
