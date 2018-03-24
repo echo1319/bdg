@@ -39,5 +39,4 @@ public class GardenMetricsServiceImpl implements GardenMetricsService {
         return gardenRepository.findAllByDateBetween(startDate, endDate);
     }
 
-
 }

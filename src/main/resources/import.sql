@@ -1,6 +1,11 @@
-INSERT INTO garden (id, air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature) VALUES (1,25.264,	55.64,	311.4,	0.2088	,0.6576,	0 );
+INSERT INTO garden (id, air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature, mdate) VALUES (1,25.264,	55.64,	311.4,	0.2088	,0.6576,	0,'2018-03-24 19:35:14.22');
 
-INSERT INTO garden (id,air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature) VALUES (2,25.376,53.716	,311.2,	0.2058,	0.6896,0);
+INSERT INTO garden (id,air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature,mdate) VALUES (2,25.376,53.716	,311.2,	0.2058,	0.6896,0,'2018-03-24 19:35:14.22');
+
+
+INSERT INTO city (id, air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature, mdate) VALUES (1,25.264,	55.64,	311.4,	0.2088	,0.6576,	0,'2018-03-24 19:35:14.22');
+
+INSERT INTO city (id,air_temperature, relevant_humidity, wind_direction, wind_speed, radiation,sphere_temperature,mdate) VALUES (2,25.376,53.716	,311.2,	0.2058,	0.6896,0,'2018-03-24 19:35:14.22');
 
 
 
