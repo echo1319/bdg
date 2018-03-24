@@ -1,7 +1,6 @@
 package com.bgd.webapp.runtime.controllers;
 
-import com.bgd.webapp.api.dto.CityMetrics;
-import com.bgd.webapp.api.dto.GardenMetrics;
+import com.bgd.webapp.api.dto.Metrics;
 import com.bgd.webapp.api.services.MetricsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,36 +26,29 @@ public class MetricsController {
     public ResponseEntity<List> getMetrics(@PathVariable(name = "site") String site,
                                            @RequestParam(name = "date", required = false) String date,
                                            @RequestParam(name = "startDate", required = false) String startDate,
+
                                            @RequestParam(name = "endDate", required = false) String endDate) {
 
-        if (site.equals("garden")) {
-            List<GardenMetrics> metrics = getGardenMetrics(date, startDate, endDate);
-            return new ResponseEntity<>(metrics, HttpStatus.OK);
-        }
-
-        List<CityMetrics> cityMetrics = getCityMetrics(date, startDate, endDate);
-        return new ResponseEntity<>(cityMetrics, HttpStatus.OK);
+        return new ResponseEntity(getMetricsList(site, date, startDate, endDate), HttpStatus.OK);
     }
 
-    private List<GardenMetrics> getGardenMetrics(String date, String startDate, String endDate) {
+
+    private List<? extends Metrics> getMetricsList(String site, String date, String startDate, String endDate) {
         if (date != null) {
-            return gardenMetricsService.getMetricsByDate(LocalDateTime.parse(date));
+            resolveService(site).getMetricsByDate(LocalDateTime.parse(date));
         } else if (startDate != null && endDate != null) {
-            return gardenMetricsService.getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.parse(endDate));
+            resolveService(site).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.parse(endDate));
         } else if (startDate != null) {
-            return gardenMetricsService.getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
+            resolveService(site).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
         }
-        return gardenMetricsService.getAll();
+        return resolveService(site).getAll();
     }
 
-    private List<CityMetrics> getCityMetrics(String date, String startDate, String endDate) {
-        if (date != null) {
-            return cityMetricsService.getMetricsByDate(LocalDateTime.parse(date));
-        } else if (startDate != null && endDate != null) {
-            return cityMetricsService.getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.parse(endDate));
-        } else if (startDate != null) {
-            return cityMetricsService.getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
+    private MetricsService resolveService(String path) {
+        if (path.equals("garden")) {
+            return gardenMetricsService;
         }
-        return cityMetricsService.getAll();
+        return cityMetricsService;
     }
+
 }

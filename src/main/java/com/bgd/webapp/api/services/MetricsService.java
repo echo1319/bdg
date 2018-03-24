@@ -1,11 +1,9 @@
 package com.bgd.webapp.api.services;
 
-import com.bgd.webapp.api.dto.Metrics;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface MetricsService<T extends Metrics> {
+public interface MetricsService<T> {
     List<T> getAll();
 
     T getCurrentMetrics();
