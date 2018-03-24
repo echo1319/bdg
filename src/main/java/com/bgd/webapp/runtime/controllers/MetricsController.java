@@ -22,31 +22,43 @@ public class MetricsController {
     @Autowired
     private MetricsService cityMetricsService;
 
-    @GetMapping(path = "/metrics/{site}", produces = "application/json")
+    @Autowired
+    private MetricsService gardenAetherMetricsService;
+
+    @Autowired
+    private MetricsService cityAetherMetricsService;
+
+
+    @GetMapping(path = "/metrics/{site}/{type}", produces = "application/json")
     public ResponseEntity<List> getMetrics(@PathVariable(name = "site") String site,
+                                           @PathVariable(name = "type", required = false, value = "metric") String type,
                                            @RequestParam(name = "date", required = false) String date,
                                            @RequestParam(name = "startDate", required = false) String startDate,
-
                                            @RequestParam(name = "endDate", required = false) String endDate) {
 
-        return new ResponseEntity(getMetricsList(site, date, startDate, endDate), HttpStatus.OK);
+        return new ResponseEntity(getMetricsList(site, type, date, startDate, endDate), HttpStatus.OK);
     }
 
 
-    private List<? extends Metrics> getMetricsList(String site, String date, String startDate, String endDate) {
+    private List<? extends Metrics> getMetricsList(String site, String type, String date, String startDate, String endDate) {
         if (date != null) {
-            resolveService(site).getMetricsByDate(LocalDateTime.parse(date));
+            resolveService(site, type).getMetricsByDate(LocalDateTime.parse(date));
         } else if (startDate != null && endDate != null) {
-            resolveService(site).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.parse(endDate));
+            resolveService(site, type).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.parse(endDate));
         } else if (startDate != null) {
-            resolveService(site).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
+            resolveService(site, type).getMetricsInRange(LocalDateTime.parse(startDate), LocalDateTime.now());
         }
-        return resolveService(site).getAll();
+        return resolveService(site, type).getAll();
     }
 
-    private MetricsService resolveService(String path) {
-        if (path.equals("garden")) {
-            return gardenMetricsService;
+    private MetricsService resolveService(String site, String type) {
+        if (site.equals("garden")) {
+            if (type.equals("metric")) {
+                return gardenMetricsService;
+            }
+            return gardenAetherMetricsService;
+        } else if (type.equals("aether")) {
+            return cityAetherMetricsService;
         }
         return cityMetricsService;
     }
