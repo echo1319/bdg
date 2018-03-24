@@ -23,8 +23,8 @@ public class MetricsController {
     @Autowired
     private CityMetricsService cityMetricsService;
 
-    @GetMapping(path = "/metrics", produces = "application/json")
-    public ResponseEntity<List> getGardenMetrics(@PathVariable(name = "site") String site,
+    @GetMapping(path = "/metrics/{site}", produces = "application/json")
+    public ResponseEntity<List> getGardenMetrics(@PathVariable(name = "site" ) String site,
                                                  @RequestParam(name = "date", required = false) String date,
                                                  @RequestParam(name = "startDate", required = false) String startDate,
                                                  @RequestParam(name = "endDate", required = false) String endDate) {
