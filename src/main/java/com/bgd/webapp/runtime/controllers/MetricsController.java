@@ -31,7 +31,7 @@ public class MetricsController {
 
     @GetMapping(path = "/metrics/{site}/{type}", produces = "application/json")
     public ResponseEntity<List> getMetrics(@PathVariable(name = "site") String site,
-                                           @PathVariable(name = "type", required = false, value = "metric") String type,
+                                           @PathVariable(name = "type", required = true) String type,
                                            @RequestParam(name = "date", required = false) String date,
                                            @RequestParam(name = "startDate", required = false) String startDate,
                                            @RequestParam(name = "endDate", required = false) String endDate) {
@@ -53,7 +53,7 @@ public class MetricsController {
 
     private MetricsService resolveService(String site, String type) {
         if (site.equals("garden")) {
-            if (type.equals("metric")) {
+            if (type.equals("default")) {
                 return gardenMetricsService;
             }
             return gardenAetherMetricsService;
