@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -25,7 +26,10 @@ public abstract class Metrics implements Serializable {
     protected double radiation;
     protected double sphereTemperature;
     protected String site;
+    //TODO later move to tables as well
+    @Transient
     protected Humidex humidex;
+    @Transient
     protected ThermoHumidityIndex thermoHumidityIndex;
 
     public Metrics() {

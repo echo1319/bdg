@@ -10,14 +10,14 @@ import java.time.LocalDate;
 public class VisitorCount implements Serializable {
     @Id
     private int id;
-    private String sitename;
-    @Column(name = "serialnum")
+    private String site;
+    @Column(name = "serial_num")
     private String serial;
     @Column(name = "vdate")
     private LocalDate date;
-    @Column(name = "dayofweek")
+    @Column(name = "day_of_week")
     private String dayOfWeek;
-    @Column(name = "numberofweek")
+    @Column(name = "number_of_week")
     private int numberOfWeek;
     private int visitors;
 
@@ -32,12 +32,12 @@ public class VisitorCount implements Serializable {
         this.id = id;
     }
 
-    public String getSitename() {
-        return sitename;
+    public String getSite() {
+        return site;
     }
 
-    public void setSitename(String siteName) {
-        this.sitename = siteName;
+    public void setSite(String siteName) {
+        this.site = siteName;
     }
 
     public String getSerial() {

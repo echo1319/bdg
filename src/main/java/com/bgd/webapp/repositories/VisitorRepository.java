@@ -13,13 +13,13 @@ import java.util.List;
 @Transactional
 @Repository
 public interface VisitorRepository extends CrudRepository<VisitorCount, Integer> {
-    @Query(value = "SELECT sum(v.VISITORS) FROM VISITOR v  WHERE v.DAYOFWEEK = ?1 GROUP BY v.DAYOFWEEK",
+    @Query(value = "SELECT sum(v.VISITORS) FROM VISITOR v  WHERE v.DAY_OF_WEEK = ?1 GROUP BY v.DAY_OF_WEEK",
         nativeQuery = true)
     int sumByDay(String day);
 
     Iterable<VisitorCount> findAll();
 
-    List<VisitorCount> findBySitename(String sitename);
+    List<VisitorCount> findBySite(String sitename);
 
     List<VisitorCount> findByDayOfWeek(String day);
 
