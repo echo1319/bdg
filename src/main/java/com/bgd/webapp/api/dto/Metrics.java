@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Metrics implements Serializable {
+public abstract class Metrics implements Serializable {
     @Id
     protected int id;
     @Column(name = "mdate")

@@ -4,6 +4,12 @@
   wind_direction     DOUBLE,  wind_speed         DOUBLE,  PRIMARY KEY (id)
 );
 
+
+195.251.23.148;
+test
+
+
+
 CREATE TABLE review (
   id            INTEGER,
   comments      VARCHAR(255),

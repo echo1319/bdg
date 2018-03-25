@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class AetherMetrics implements Serializable {
+public abstract class AetherMetrics implements Serializable {
     @Id
     protected int id;
     @Column(name = "mdate")
