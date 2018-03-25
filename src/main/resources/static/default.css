@@ -477,11 +477,9 @@ ul.contact li a.icon-rss:before
 	#header-featured
 	{
 		padding: 10em 0em;
-		background-image: url(images/banner.jpg);
 		background-position: center;
 		background-size: cover;
 	}
-
 
 
 #banner-wrapper
@@ -493,7 +491,7 @@ ul.contact li a.icon-rss:before
 	overflow: hidden;
 	width: 1000px;
 	text-align: center;
-	color: rgba(255,255,255,.7);
+	color: black;
 	font-size: 1.5em;
 }
 
@@ -507,7 +505,7 @@ ul.contact li a.icon-rss:before
 	padding-bottom: 0.50em;
 	font-weight: 400;
 	font-size: 3em;
-	color: #FFF;
+	color: black;
 }
 
 #banner .button

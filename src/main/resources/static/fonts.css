@@ -433,7 +433,11 @@
 		.fa-weibo:before{content:"\f18a"}
 		.fa-renren:before{content:"\f18b"}
 		.fa-pagelines:before{content:"\f18c"}
-		.fa-stack-exchange:before{content:"\f18d"}
+		.fa-temperature:before{content:"\f2c8"}
+        .fa-water:before{content:"\f043"}
+        .fa-wind:before{content:"\f1d8"}
+        .fa-wind-direction:before{content:"\f14e"}
+        .fa-stack-exchange:before{content:"\f18d"}
 		.fa-arrow-circle-o-right:before{content:"\f18e"}
 		.fa-arrow-circle-o-left:before{content:"\f190"}
 		.fa-toggle-left:before,.fa-caret-square-o-left:before{content:"\f191"}
