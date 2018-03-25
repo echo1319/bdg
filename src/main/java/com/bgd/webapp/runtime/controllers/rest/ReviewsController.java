@@ -1,4 +1,4 @@
-package com.bgd.webapp.runtime.controllers;
+package com.bgd.webapp.runtime.controllers.rest;
 
 import com.bgd.webapp.api.dto.Review;
 import com.bgd.webapp.api.services.ReviewsService;

@@ -26,7 +26,7 @@ public abstract class AetherMetrics implements Serializable {
     protected double PM1;
     protected double PM25;
     protected double PM10;
-    private double CO;
+    protected double CO;
     protected double temperature;
     protected double humidity;
     protected double relativeHumidity;

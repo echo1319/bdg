@@ -1,4 +1,4 @@
-package com.bgd.webapp.runtime.controllers;
+package com.bgd.webapp.runtime.controllers.rest;
 
 import com.bgd.webapp.api.dto.Metrics;
 import com.bgd.webapp.api.services.MetricsService;
