@@ -56,8 +56,7 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
 <div id="header-featured">
     <div id="banner-wrapper">
         <div id="banner" class="container">
-
-            <a href="#" class="button">Περισσότερα</a>
+            <a href="#" class="button">Περισσοτερα</a>
         </div>
     </div>
 </div>
