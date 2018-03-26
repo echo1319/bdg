@@ -54,7 +54,8 @@ Released   : 20131202
 		<div id="featured" class="extra2 margin-btm container">
 			<div class="main-title">
 				<h2>Nulla eleifend purus</h2>
-				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span> </div>
+				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+				 </div>
 	
 			<div class="ebox1"> <span class="fa fa-pagelines"></span>
 				<div class="title">
@@ -81,7 +82,8 @@ Released   : 20131202
 					<h2>Mauris vulputate dolor</h2>
 					<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span> </div>
 				<p>Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. </p>
-				<a href="#" class="button">Etiam posuere</a> </div>
+				<a href="#" class="button">Etiam posuere</a>
+				 </div>
 		</div>
 	</div>
 </div>

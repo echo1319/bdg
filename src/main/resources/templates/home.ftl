@@ -29,6 +29,11 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<#--
+
+-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if IE 6]>
     <link href="default_ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
@@ -45,10 +50,10 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
         <div id="menu">
             <ul>
                 <li class="current_page_item"><a href="#" accesskey="1"
-                                                 title=""><@spring.message "menu.category.main"/></a></li>
-                <li><a href="#" accesskey="2" title=""><@spring.message "menu.category.info"/></a></li>
-                <li><a href="#" accesskey="3" title=""><@spring.message "menu.category.aboutUs"/></a></li>
-                <li><a href="#" accesskey="5" title=""><@spring.message "menu.category.contact"/></a></li>
+                                                 title="">ΑΡΧΙΚΗ</a></li>
+                <li><a href="#" accesskey="2" title="">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
+                <li><a href="#" accesskey="3" title="">ΟΜΑΔΑ</a></li>
+                <li><a href="#" accesskey="5" title="">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
             </ul>
         </div>
     </div>
@@ -56,6 +61,14 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
 <div id="header-featured">
     <div id="banner-wrapper">
         <div id="banner" class="container">
+
+            <div id="canvas-holder" style="width:100%">
+                <canvas id="donutChart" width="500" height="500">
+                    <script src="scripts/donut.js" type='text/javascript'></script>
+                </canvas>
+            </div>
+
+
             <a href="#" class="button">Περισσοτερα</a>
         </div>
     </div>
@@ -65,49 +78,45 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
         <div id="featured" class="extra2 margin-btm container">
             <div class="main-title">
                 <h2>Ατμοσφαιρικές Συνθήκες</h2>
-<#--
-                <span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
--->
+                <br>
             </div>
+
             <div class="ebox1"><span class="fa fa-temperature"></span>
                 <div class="title">
                     <h2>Θερμοκρασία</h2>
+                    <h3>${temperature} oC</h3>
                 </div>
-                <div class="byline">30</div>
 
             </div>
+
             <div class="ebox2"><span class="fa fa-water"></span>
                 <div class="title">
                     <h2>Υγρασία</h2>
-                    <div class="byline">50%</div>
+                    <h3>${humidity} %</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="extra2 container">
+
+            <div class="ebox1"><span class="fa fa-wind"></span>
+                <div class="title">
+                    <h2>Άνεμος</h2>
+                    <h3>${windSpeed} Km/h</h3>
                 </div>
             </div>
 
-<#--            <a href="#" class="button">Etiam posuere</a></div>-->
-
-
-
-    <div class="extra2 container">
-
-        <div class="ebox1"><span class="fa fa-wind"></span>
-            <div class="title">
-                <h2>Άνεμος</h2>
-
-                <div class="byline">25</div>
+            <div class="ebox2"><span class="fa fa-wind-direction"></span>
+                <div class="title">
+                    <h2>Κατεύθυνση Ανέμου</h2>
+                    <h3>${windDirection}</h3>
+                </div>
             </div>
         </div>
 
-        <div class="ebox2"><span class="fa fa-wind-direction"></span>
-            <div class="title">
-                <h2>Κατεύθυνση Ανέμου</h2>
-
-                <div class="byline">25</div>
-            </div>
-        </div>
     </div>
+</div>
 
-</div>
-</div>
 <div id="copyright" class="container">
     <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a
             href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>

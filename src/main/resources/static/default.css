@@ -914,6 +914,13 @@ ul.contact li a.icon-rss:before
 	font-size: 2em;
 }
 
+
+.extra2 .title h3
+{
+	font-size: 4em;
+	color:#8dc63f;
+}
+
 .extra2 .title .byline
 {
 	font-size: 0.80em;
