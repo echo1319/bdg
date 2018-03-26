@@ -61,9 +61,9 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
 <div id="header-featured">
     <div id="banner-wrapper">
         <div id="banner" class="container">
-
-            <div id="canvas-holder" style="width:100%">
-                <canvas id="donutChart" width="500" height="500">
+            <h2>Ποιότητα Ατμόσφαιρας </h2>
+            <div id="canvas-holder" style="width:100%; height: 60%;" >
+                <canvas id="donutChart" width="350px;" height="350px;">
                     <script src="scripts/donut.js" type='text/javascript'></script>
                 </canvas>
             </div>

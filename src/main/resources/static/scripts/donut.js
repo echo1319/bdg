@@ -1,3 +1,25 @@
+Chart.plugins.register({
+    beforeDraw: function(chart) {
+        var data = chart.data.datasets[0].data;
+        var sum = data.reduce(function(a, b) {
+            return a + b;
+        }, 0);
+        var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx;
+        ctx.restore();
+        var fontSize = (height / 10).toFixed(2);
+        ctx.font = fontSize + "px Arial";
+        ctx.textBaseline = "middle";
+        var text = sum,
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+    }
+});
+
+
 var randomScalingFactor = function() {
     return Math.round(Math.random() * 100);
 };
@@ -8,6 +30,7 @@ var randomColorFactor = function() {
 var config = {
     type: 'doughnut',
     data: {
+        labels: ["ERPI", "AQI", "Sound", "Temperature"],
         datasets: [{
             data: [
                 randomScalingFactor(),
@@ -16,11 +39,9 @@ var config = {
             ],
             backgroundColor: [
                 "#F7464A",
-                "#FFFFFF",
-                "#FDB45C",
-                "#949FB1",
-                "#4D5360"
-            ]
+                "#FFFFFF"
+            ],
+            labels: ['ERPI']
         },
             {
                 data: [
@@ -31,6 +52,7 @@ var config = {
                     "#46BFBD",
                     "#FFFFFF"
                 ],
+                labels: ['AQI']
             },
             {
                 data: [
@@ -43,6 +65,7 @@ var config = {
                     "#FDB45C",
                     "#FFFFFF"
                 ],
+                labels:['Sound']
             },
 
             {
@@ -54,17 +77,25 @@ var config = {
                 backgroundColor: [
                     "#949FB1",
                     "#FFFFFF"
-                ]
+                ],
+                labels:['Temperature']
             }],
-        labels: [
-            "ERPI",
-            "AQI",
-            "Sound",
-            "Pressure"
-        ]
     },
     options: {
-        responsive: true
+        responsive: true,
+        legend: {
+            display: false,
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var dataset = data.datasets[tooltipItem.datasetIndex];
+                    var index = tooltipItem.index;
+                    return dataset.labels[index] + ': ' + dataset.data[index];
+                }
+            }
+        }
+
     }
 };
 
