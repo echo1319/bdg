@@ -22,20 +22,13 @@ public class EuropeanPollutionIndexCalculator {
 
     public ERPI calculate(List<AetherMetrics> dailyMetrics) {
 
-        LocalDateTime currentTime = LocalDateTime.now();
-
-        List<AetherMetrics> hourlyMetrics = dailyMetrics.stream()
-            .filter(aetherMetrics -> aetherMetrics.getDate().isAfter(currentTime.minusHours(1)))
-            .collect(Collectors.toList());
+        List<AetherMetrics> hourlyMetrics = getMetricsForHours(dailyMetrics, 1);
 
         // get metics per hour/date /etc for each and delegate them
         double no2Index = calculateNO2(hourlyMetrics);
         double so2Index = calculateSO2(hourlyMetrics);
 
-
-        List<AetherMetrics> eightlyMetrics = dailyMetrics.stream()
-            .filter(aetherMetrics -> aetherMetrics.getDate().isAfter(currentTime.minusHours(8)))
-            .collect(Collectors.toList());
+        List<AetherMetrics> eightlyMetrics = getMetricsForHours(dailyMetrics, 8);
 
         double o3Index = calculateO3(eightlyMetrics);
         double coIndex = calculateCO(eightlyMetrics);
@@ -49,6 +42,14 @@ public class EuropeanPollutionIndexCalculator {
         ERPI_AIR_QUALITY airQuality = computeAirQualityStatus(erpiIndex.getValue());
 
         return new ERPI(erpiIndex.getValue(), airQuality, erpiIndex.getKey());
+    }
+
+    private List<AetherMetrics> getMetricsForHours(List<AetherMetrics> dailyMetrics,
+                                                   int hours) {
+        LocalDateTime currentTime = LocalDateTime.now();
+        return dailyMetrics.stream()
+            .filter(aetherMetrics -> aetherMetrics.getDate().isAfter(currentTime.minusHours(hours)))
+            .collect(Collectors.toList());
     }
 
 

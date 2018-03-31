@@ -26,6 +26,9 @@ public class AirQualityIndexCalculator {
     @Autowired
     private AqiCalculator SO2Calculator;
 
+    @Autowired
+    private AirQualityCalculator airQualityCalculator;
+
 
     public AQI calculateAQI(double PM10Index, double O3Index, double NO2Index, double COIndex, double SO2Index) {
         double pm10Aqi = PM10Calculator.computeAQI(PM10Index);
@@ -43,28 +46,10 @@ public class AirQualityIndexCalculator {
         POLLUTION_FACTORS chosenFactor = maxIndex.getKey();
 
         Double aqi = maxIndex.getValue();
-        AQI_AIR_QUALITY airQualityStatus = computeAirQualityStatus(aqi);
+        AQI_AIR_QUALITY airQualityStatus = airQualityCalculator.computeStatus(aqi);
 
         return new AQI(aqi, airQualityStatus, chosenFactor);
 
-    }
-
-
-    private AQI_AIR_QUALITY computeAirQualityStatus(double value) {
-        if (value >= 0 && value <= 50) {
-            return AQI_AIR_QUALITY.GOOD;
-        } else if (value >= 51 && value <= 100) {
-            return AQI_AIR_QUALITY.MEDIOCRE;
-        } else if (value >= 101 && value <= 150) {
-            return AQI_AIR_QUALITY.SLIGHTLY_HARMFUL;
-        } else if (value >= 151 && value <= 200) {
-            return AQI_AIR_QUALITY.HARMFUL;
-        } else if (value >= 201 && value <= 300) {
-            return AQI_AIR_QUALITY.VERY_HARMFUL;
-        } else if (value >= 301 && value <= 500) {
-            return AQI_AIR_QUALITY.DANGEROUSLY_HARMFUL;
-        }
-        throw new RuntimeException("Invalid AQI value " + value);
     }
 
 

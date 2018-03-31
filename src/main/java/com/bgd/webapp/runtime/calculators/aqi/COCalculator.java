@@ -12,7 +12,7 @@ public class COCalculator implements AqiCalculator {
             return 9.0909 * value;
         } else if (value >= 5.6 && value <= 11.76) {
             return (7.9545 * value) + 6.4545;
-        } else if (value <= 11.77 && value >= 15.5) {
+        } else if (value >= 11.77 && value <= 15.5) {
             return (13.1367 * value) - 53.62;
         } else if (value >= 15.6 && value <= 19.25) {
             return (13.4246 * value) - 58.42;
