@@ -1,4 +1,4 @@
-package com.bgd.webapp.api.dto.indexes;
+package com.bgd.webapp.api.indices;
 
 public enum AQI_AIR_QUALITY {
     GOOD,
@@ -7,4 +7,5 @@ public enum AQI_AIR_QUALITY {
     HARMFUL,
     VERY_HARMFUL,
     DANGEROUSLY_HARMFUL;
+
 }

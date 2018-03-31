@@ -1,12 +1,16 @@
-package com.bgd.webapp.api.dto.indexes;
+package com.bgd.webapp.runtime.calculators.humidex;
 
-public class Humidex {
-    private double value;
-    private THERMAL_COMFORT thermalComfort;
+import com.bgd.webapp.api.indices.Humidex;
+import com.bgd.webapp.api.indices.THERMAL_COMFORT;
+import org.springframework.stereotype.Component;
 
-    public Humidex(double airTemperature, double relevantHumidity) {
-        value = computeHumidex(airTemperature, relevantHumidity);
-        thermalComfort = computeThermalComfort(value);
+@Component
+public class HumidexCalculator {
+
+    public Humidex calculate(double airTemperature, double relevantHumidity) {
+        double value = computeHumidex(airTemperature, relevantHumidity);
+        THERMAL_COMFORT thermalComfort = computeThermalComfort(value);
+        return new Humidex(value, thermalComfort);
     }
 
     // H=T+0.5555*[((6.112*10[(7.5*T)/(237.7+T)]*RH)/100)-10.0]
@@ -32,19 +36,4 @@ public class Humidex {
     }
 
 
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
-    public THERMAL_COMFORT getThermalComfort() {
-        return thermalComfort;
-    }
-
-    public void setThermalComfort(THERMAL_COMFORT thermalComfort) {
-        this.thermalComfort = thermalComfort;
-    }
 }

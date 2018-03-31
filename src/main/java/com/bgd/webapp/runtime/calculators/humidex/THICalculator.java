@@ -1,15 +1,19 @@
-package com.bgd.webapp.api.dto.indexes;
+package com.bgd.webapp.runtime.calculators.humidex;
 
-public class ThermoHumidityIndex {
+import com.bgd.webapp.api.indices.THI_STATUS;
+import com.bgd.webapp.api.indices.ThermoHumidityIndex;
+import org.springframework.stereotype.Component;
+
+@Component
+public class THICalculator {
     private static final double CONSTANT_A = 0.55;
     private static final double CONSTANT_B = 0.0055;
     private static final double CONSTANT_C = 14.5;
-    private double value;
-    private THI_STATUS thiStatus;
 
-    public ThermoHumidityIndex(double airTemperature, double relevantHumidity) {
-        value = computeTHI(airTemperature, relevantHumidity);
-        thiStatus = computeThiStatus(value);
+    public ThermoHumidityIndex calculate(double airTemperature, double relevantHumidity) {
+        double value = computeTHI(airTemperature, relevantHumidity);
+        THI_STATUS thiStatus = computeThiStatus(value);
+        return new ThermoHumidityIndex(value, thiStatus);
     }
 
     //THI = T - ( 0.55 –0.0055 * RH ) * ( T – 14.5 )
@@ -43,19 +47,4 @@ public class ThermoHumidityIndex {
     }
 
 
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
-    public THI_STATUS getThiStatus() {
-        return thiStatus;
-    }
-
-    public void setThiStatus(THI_STATUS thiStatus) {
-        this.thiStatus = thiStatus;
-    }
 }

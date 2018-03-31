@@ -1,7 +1,7 @@
 Chart.plugins.register({
-    beforeDraw: function(chart) {
+    beforeDraw: function (chart) {
         var data = chart.data.datasets[0].data;
-        var sum = data.reduce(function(a, b) {
+        var sum = data.reduce(function (a, b) {
             return a + b;
         }, 0);
         var width = chart.chart.width,
@@ -20,11 +20,8 @@ Chart.plugins.register({
 });
 
 
-var randomScalingFactor = function() {
+var randomScalingFactor = function () {
     return Math.round(Math.random() * 100);
-};
-var randomColorFactor = function() {
-    return Math.round(Math.random() * 255);
 };
 
 var config = {
@@ -65,7 +62,7 @@ var config = {
                     "#FDB45C",
                     "#FFFFFF"
                 ],
-                labels:['Sound']
+                labels: ['Sound']
             },
 
             {
@@ -78,7 +75,7 @@ var config = {
                     "#949FB1",
                     "#FFFFFF"
                 ],
-                labels:['Temperature']
+                labels: ['Temperature']
             }],
     },
     options: {
@@ -88,7 +85,7 @@ var config = {
         },
         tooltips: {
             callbacks: {
-                label: function(tooltipItem, data) {
+                label: function (tooltipItem, data) {
                     var dataset = data.datasets[tooltipItem.datasetIndex];
                     var index = tooltipItem.index;
                     return dataset.labels[index] + ': ' + dataset.data[index];
@@ -100,5 +97,8 @@ var config = {
 };
 
 
-var ctx = document.getElementById("donutChart");
-var myDoughnut = new Chart(ctx, config);
+var ctx = document.getElementById("donutChartERPI");
+var donutChartERPI = new Chart(ctx, config);
+
+var ctx2 = document.getElementById("donutChartHumidex");
+var donutChartHumidex = new Chart(ctx2, config);

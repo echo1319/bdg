@@ -1,14 +1,10 @@
 package com.bgd.webapp.api.dto;
 
-import com.bgd.webapp.api.dto.indexes.AirQualityIndex;
-import com.bgd.webapp.api.dto.indexes.ERPollutionIndex;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -33,15 +29,7 @@ public abstract class AetherMetrics implements Serializable {
     protected double pressure;
     protected double sound;
 
-    @Transient
-    protected ERPollutionIndex erPollutionIndex;
-
-    @Transient
-    protected AirQualityIndex airQualityIndex;
-
     public AetherMetrics() {
-        erPollutionIndex = new ERPollutionIndex(PM10, O3, NO2, CO, SO2);
-        airQualityIndex = new AirQualityIndex(PM10, O3, NO2, CO, SO2);
     }
 
     public int getId() {
@@ -154,23 +142,6 @@ public abstract class AetherMetrics implements Serializable {
 
     public void setSound(double sound) {
         this.sound = sound;
-    }
-
-
-    public ERPollutionIndex getErPollutionIndex() {
-        return erPollutionIndex;
-    }
-
-    public void setErPollutionIndex(ERPollutionIndex erPollutionIndex) {
-        this.erPollutionIndex = erPollutionIndex;
-    }
-
-    public AirQualityIndex getAirQualityIndex() {
-        return airQualityIndex;
-    }
-
-    public void setAirQualityIndex(AirQualityIndex airQualityIndex) {
-        this.airQualityIndex = airQualityIndex;
     }
 
     public double getCO() {

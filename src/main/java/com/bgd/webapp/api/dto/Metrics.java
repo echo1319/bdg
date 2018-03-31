@@ -1,14 +1,10 @@
 package com.bgd.webapp.api.dto;
 
-import com.bgd.webapp.api.dto.indexes.Humidex;
-import com.bgd.webapp.api.dto.indexes.ThermoHumidityIndex;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -26,15 +22,9 @@ public abstract class Metrics implements Serializable {
     protected double radiation;
     protected double sphereTemperature;
     protected String site;
-    //TODO later move to tables as well
-    @Transient
-    protected Humidex humidex;
-    @Transient
-    protected ThermoHumidityIndex thermoHumidityIndex;
+
 
     public Metrics() {
-        this.humidex = new Humidex(getAirTemperature(), getRelevantHumidity());
-        this.thermoHumidityIndex = new ThermoHumidityIndex(getAirTemperature(), getRelevantHumidity());
     }
 
     public int getId() {
@@ -109,19 +99,4 @@ public abstract class Metrics implements Serializable {
         this.site = site;
     }
 
-    public Humidex getHumidex() {
-        return humidex;
-    }
-
-    public void setHumidex(Humidex humidex) {
-        this.humidex = humidex;
-    }
-
-    public ThermoHumidityIndex getThermoHumidityIndex() {
-        return thermoHumidityIndex;
-    }
-
-    public void setThermoHumidityIndex(ThermoHumidityIndex thermoHumidityIndex) {
-        this.thermoHumidityIndex = thermoHumidityIndex;
-    }
 }

@@ -1,4 +1,4 @@
-package com.bgd.webapp.api.dto.indexes;
+package com.bgd.webapp.api.indices;
 
 public enum THERMAL_COMFORT {
     NORMAL,

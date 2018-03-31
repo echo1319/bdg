@@ -1,7 +1,5 @@
 package com.bgd.webapp.runtime.controllers.mvc;
 
-import com.bgd.webapp.api.dto.GardenAetherMetrics;
-import com.bgd.webapp.api.dto.GardenMetrics;
 import com.bgd.webapp.api.services.MetricsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

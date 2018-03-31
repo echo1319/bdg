@@ -1,4 +1,4 @@
-package com.bgd.webapp.api.dto.indexes;
+package com.bgd.webapp.api.indices;
 
 public enum ERPI_AIR_QUALITY {
     VERY_HIGH,
