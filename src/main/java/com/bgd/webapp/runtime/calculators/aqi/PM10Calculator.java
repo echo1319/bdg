@@ -3,7 +3,7 @@ package com.bgd.webapp.runtime.calculators.aqi;
 import com.bgd.webapp.api.calculators.AqiCalculator;
 import org.springframework.stereotype.Component;
 
-@Component("PM10Calculator")
+@Component("pm10Calculator")
 public class PM10Calculator implements AqiCalculator {
 
     @Override

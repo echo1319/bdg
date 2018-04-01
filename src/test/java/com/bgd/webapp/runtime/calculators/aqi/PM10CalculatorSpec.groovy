@@ -7,7 +7,7 @@ class PM10CalculatorSpec extends Specification {
     PM10Calculator calculator = new PM10Calculator()
 
     @Unroll
-    def "Compute O3 AQi"() {
+    def "Compute O3 Aqi"() {
         when:
         double aqi = calculator.computeAQI(value)
 

@@ -4,7 +4,7 @@ package com.bgd.webapp.runtime.calculators.aqi;
 import com.bgd.webapp.api.calculators.AqiCalculator;
 import org.springframework.stereotype.Component;
 
-@Component("O3Calculator")
+@Component("o3Calculator")
 public class O3Calculator implements AqiCalculator {
 
     //    O3 (8 hr)μg/m3

@@ -3,7 +3,7 @@ package com.bgd.webapp.runtime.calculators.aqi;
 import com.bgd.webapp.api.calculators.AqiCalculator;
 import org.springframework.stereotype.Component;
 
-@Component("NO2Calculator")
+@Component("no2Calculator")
 public class NO2Calculator implements AqiCalculator {
     @Override
     public double computeAQI(double value) {
