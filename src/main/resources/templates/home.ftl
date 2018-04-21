@@ -90,7 +90,7 @@
 
         <div class="highlights">
             <div class="content" style="width: 50%;">
-                <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
+                <h3>Θερμική Αίσθηση στον Κήπο</h3>
                 <p> Δεικτης Humidex </p>
                 <div class="canvas-holder">
                     <canvas id="humidexGarden">
@@ -100,10 +100,9 @@
             </div>
 
             <div class="content" style="width: 50%;">
-
-                <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
+                <h3>Θερμική Αίσθηση στο Σύνταγμα </h3>
                 <p> Δεικτης Humidex </p>
-                <div class="canvas-holder">
+                <div class="canvas-holder-humidexCity">
                     <canvas id="humidexCity">
                             <#include "charts/humidexCity.ftl">
                     </canvas>
