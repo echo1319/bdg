@@ -111,9 +111,12 @@
                 που έχω επισκεφτεί στη ζωή μου. Η πεμπτουσία ενός πάρκου είναι όπως όταν κάποιος κοιτά ένα πίνακα ή
                 ονειρεύεται, να βρίσκεται σε έναν τόπο που όμως δεν μπορεί ποτέ να πάει."
             </p>
+
+            <img src="images/garden-pic.jpg" alt="image"/>
+            <img src="images/statue.jpg" alt="image"/>
+            <img src="images/zappeio-pic.jpg" alt="image"/>
         </div>
 
-        <img src="images/garden-pic.jpg" alt="image"/>
     </div>
 </section>
 
