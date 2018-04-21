@@ -4,7 +4,7 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Big Green Data</title>
     <meta charset="utf-8"/>
@@ -12,8 +12,13 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <link href="animate.css" rel="stylesheet" type="text/css" media="all"/>
 
+    <!-- Scripts  jquery and chart js need to be together in the header-->
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
 </head>
 <body class="is-preload">
@@ -56,24 +61,60 @@
 
 
         <div class="highlights">
-            <section>
-                <div class="content">
+            <div class="content" style="width: 50%;">
+                <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
+                <p> Δεικτης ERPI και ΑQI</p>
+                <div class="canvas-holder">
+                    <canvas id="donutChartERPI">
+                              <#include "charts/erpiGarden.ftl">
+                    </canvas>
+                </div>
+            </div>
 
+            <div class="content" style="width: 50%;">
 
-            </section>
+                <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
+                <p> Δεικτης ERPI και ΑQI</p>
+                <div class="canvas-holder">
+                    <canvas id="donutChartHumidex">
+                            <#include "charts/erpiCity.ftl">
+                    </canvas>
+                </div>
+            </div>
 
         </div>
 
-        <div class="canvas-holder">
-            <canvas id="donutChartERPI">
-                <script src="scripts/donut.js" type='text/javasript'></script>
-            </canvas>
+
+        <div class="highlights">
+            <div class="content" style="width: 50%;">
+                <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
+                <p> Δεικτης Humidex </p>
+                <div class="canvas-holder">
+                    <canvas id="donutChartERPI">
+                              <#include "charts/humidexGarden.ftl">
+                    </canvas>
+                </div>
+            </div>
+
+            <div class="content" style="width: 50%;">
+
+                <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
+                <p> Δεικτης Humidex </p>
+                <div class="canvas-holder">
+                    <canvas id="donutChartHumidex">
+                            <#include "charts/humidexCity.ftl">
+                    </canvas>
+                </div>
+            </div>
+
         </div>
 
 
         <div class="highlights">
             <section>
                 <div class="content">
+
+
                     <header>
                         <a href="#" class="icon  fa-temperature"><span class="label">Icon</span></a>
                         <h3>Θερμοκρασία</h3>
@@ -94,7 +135,7 @@
                 <div class="content">
                     <header>
                         <a href="#" class="icon  fa-wind"><span class="label">Icon</span></a>
-                            <h3>Ανεμος</h3>
+                        <h3>Ανεμος</h3>
                     </header>
                     <h3 style="font-weight: bold">${windSpeed} %</h3>
                 </div>
@@ -104,7 +145,7 @@
                 <div class="content">
                     <header>
                         <a href="#" class="icon fa-wind-direction"><span class="label">Icon</span></a>
-                        <h3 >Κατευθυνση Ανεμου</h3>
+                        <h3>Κατευθυνση Ανεμου</h3>
                     </header>
                     <h3 style="font-weight: bold">${windDirection}</h3>
                 </div>
@@ -180,26 +221,19 @@
     <div class="inner">
         <div class="content">
             <section>
-                <h3>Accumsan montes viverra</h3>
-                <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
-                    faucibus ornare mi ut ante amet placerat aliquet. Volutpat e</p>
+                <h3>Ο Δημος Αθηναιων</h3>
+                <p>Πληροφοριες για τη διοικηση του κηπου</p>
             </section>
             <section>
-                <h4>Sem turpis amet semper</h4>
-                <ul class="alt">
-                    <li><a href="#">Dolor pulvinar sed etiam.</a></li>
-                    <li><a href="#">Etiam vel lorem sed amet.</a></li>
-                    <li><a href="#">Felis enim feugiat viverra.</a></li>
-                    <li><a href="#">Dolor pulvinar magna etiam.</a></li>
-                </ul>
+                <h4>Η ομαδα</h4>
+                <p>Πληροφοριες για την ομαδα</p>
             </section>
             <section>
-                <h4>Magna sed ipsum</h4>
+                <h4>Ο Εθνικος Κηπος</h4>
                 <ul class="plain">
                     <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
                     <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
                     <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                    <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
                 </ul>
             </section>
         </div>
@@ -216,7 +250,6 @@
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
 </body>
 </html>
