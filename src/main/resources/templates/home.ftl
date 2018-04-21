@@ -1,148 +1,222 @@
-<#--<#ftl encoding="ISO-8859-7">-->
-<#import "/spring.ftl" as spring>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML>
 <!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
-
-Name       : LawnLike
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20131202
-Vectors used from:
-https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
-
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <meta name="keywords" content=""/>
+    <title>Big Green Data</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <meta name="description" content=""/>
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
-    <link href="default.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta name="keywords" content=""/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
     <link href="animate.css" rel="stylesheet" type="text/css" media="all"/>
 
-    <link href="fonts.css" rel="stylesheet" type="text/css" media="all"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--[if IE 6]>
-    <link href="default_ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
 
 </head>
-<body>
+<body class="is-preload">
 
+<!-- Header -->
+<header id="header">
+    <a class="logo" href="/">Big Green Data</a>
+    <nav>
+        <a href="#menu">Μενού</a>
+    </nav>
+</header>
 
-<div id="header-wrapper">
-    <div id="header" class="container">
-        <div id="logo">
-            <h1><span class="fa fa-bolt"></span><a href="#"><@spring.message "site.logo"/></a></h1>
-        </div>
-        <div id="menu">
-            <ul>
-                <li class="current_page_item"><a href="#" accesskey="1" title="">ΑΡΧΙΚΗ</a></li>
-                <li><a href="#" accesskey="2" title="">ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
-                <li><a href="#" accesskey="3" title="">ΟΜΑΔΑ</a></li>
-                <li><a href="#" accesskey="5" title="">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
-            </ul>
-        </div>
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="/">Αρχική</a></li>
+        <li><a href="/garden">Ο Κήπος</a></li>
+        <li><a href="/info">Ποιότητα Ατμόσφαιρας</a></li>
+        <li><a href="/team">Η ομάδα</a></li>
+        <li><a href="/contact">Επικοινωνία</a></li>
+
+    </ul>
+</nav>
+
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <h1>Ο Εθνικος Κηπος</h1>
     </div>
-</div>
+    <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
+</section>
+
+<!-- Highlights -->
+<section class="wrapper">
+    <div class="inner">
+        <header class="special">
+            <h2>Ατμοσφαιρικες συνθηκες</h2>
+            <p>Η ποιότητα της ατμόσφαιρας στον Κήπο, συγκρινόμενη με τις αντίστοιχες συνθήκες στο κέντρο της πόλης.</p>
+        </header>
 
 
-<div id="header-featured">
-    <div id="banner-wrapper">
-        <div style="text-align: center">
-            <h1>Ο Κήπος Σήμερα</h1>
-            <br>
-            <img class="fadeIn animated" src="/images/spring.jpg" alt="test"/>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div style="extra2 margin-btm container"></div>
-    <div id="banner-wrapper">
-        <div id="banner" class="container">
-
-            <h2>Ποιότητα Ατμόσφαιρας </h2>
-            <div class="canvas-holder" style="width:40%; height: 60%; display: inline-block">
-                <canvas id="donutChartERPI" width="350px;" height="350px;">
-                    <script src="scripts/donut.js" type='text/javasript'></script>
-                </canvas>
-            </div>
+        <div class="highlights">
+            <section>
+                <div class="content">
 
 
-            <#--<div class="canvas-holder-second" style="width:40%; height: 60%; display: inline-block">
-                <canvas id="donutChartHumidex" width="350px;" height="350px; ">
-                    <script src="scripts/donut.js" type='text/javascript'></script>
-                </canvas>
-            </div>-->
+            </section>
 
-            <a href="#" class="button" style="display: none" onclick="showInfoDiv()">Περισσοτερα</a>
-
-            <div id="infoDiv" style="display:none;" class="infoDiv"></div>
-
-
-            <div> Ο Δείκτης AQI</div>
-        </div>
-    </div>
-</div>
-<div id="wrapper">
-    <div id="featured-wrapper">
-        <div id="featured" class="extra2 margin-btm container">
-            <div class="main-title">
-                <h2>Ατμοσφαιρικές Συνθήκες</h2>
-                <br>
-            </div>
-
-            <div class="ebox1"><span class="fa fa-temperature"></span>
-                <div class="title">
-                    <h2>Θερμοκρασία</h2>
-                    <h3>${temperature} oC</h3>
-                </div>
-
-            </div>
-
-            <div class="ebox2"><span class="fa fa-water"></span>
-                <div class="title">
-                    <h2>Υγρασία</h2>
-                    <h3>${humidity} %</h3>
-                </div>
-            </div>
         </div>
 
-        <div class="extra2 container">
+        <div class="canvas-holder">
+            <canvas id="donutChartERPI">
+                <script src="scripts/donut.js" type='text/javasript'></script>
+            </canvas>
+        </div>
 
-            <div class="ebox1"><span class="fa fa-wind"></span>
-                <div class="title">
-                    <h2>Άνεμος</h2>
-                    <h3>${windSpeed} Km/h</h3>
-                </div>
-            </div>
 
-            <div class="ebox2"><span class="fa fa-wind-direction"></span>
-                <div class="title">
-                    <h2>Κατεύθυνση Ανέμου</h2>
-                    <h3>${windDirection}</h3>
+        <div class="highlights">
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon  fa-temperature"><span class="label">Icon</span></a>
+                        <h3>Θερμοκρασία</h3>
+                    </header>
+                    <h3 style="font-weight: bold">${temperature} oC</h3>
                 </div>
-            </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon  fa-water"><span class="label">Icon</span></a>
+                        <h3>Υγρασια</h3>
+                    </header>
+                    <h3 style="font-weight: bold">${humidity} %</h3>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon  fa-wind"><span class="label">Icon</span></a>
+                            <h3>Ανεμος</h3>
+                    </header>
+                    <h3 style="font-weight: bold">${windSpeed} %</h3>
+                </div>
+            </section>
+
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon fa-wind-direction"><span class="label">Icon</span></a>
+                        <h3 >Κατευθυνση Ανεμου</h3>
+                    </header>
+                    <h3 style="font-weight: bold">${windDirection}</h3>
+                </div>
+            </section>
+
         </div>
 
     </div>
-</div>
+</section>
 
-<div id="copyright" class="container">
-    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a
-            href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-</div>
+<!-- CTA -->
+<section id="cta" class="wrapper">
+    <div class="inner">
+        <h2>Μια βολτα στον κηπο</h2>
+        <p></p>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="wrapper">
+    <div class="inner">
+        <header class="special">
+            <h2>ΕΜΠΕΙΡΙΕΣ ΑΠΟ ΤΟΝ ΚΗΠΟ</h2>
+            <p>Ο Εθνικός Κήπος φιλοξενεί κατά μέσο όρο 1000 επισκέπτες μεταξύ των οποίων είναι εκπαιδευτικές εκδρομές
+                και περιβαλλοντικές δραστηριότητες. </p>
+        </header>
+        <div class="testimonials">
+            <section>
+                <div class="content">
+                    <blockquote>
+                        <p>Επιλεγμένα Σχόλια επισκεπτών.</p>
+                    </blockquote>
+                    <div class="author">
+                        <div class="image">
+                            <img src="/images/pic01.jpg" alt=""/>
+                        </div>
+                        <p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <blockquote>
+                        <p>Επιλεγμένα Σχόλια επισκεπτών.</p>
+                    </blockquote>
+                    <div class="author">
+                        <div class="image">
+                            <img src="/images/pic03.jpg" alt=""/>
+                        </div>
+                        <p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="content">
+                    <blockquote>
+                        <p>Επιλεγμένα Σχόλια επισκεπτών.</p>
+                    </blockquote>
+                    <div class="author">
+                        <div class="image">
+                            <img src="/images/pic02.jpg" alt=""/>
+                        </div>
+                        <p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <div class="content">
+            <section>
+                <h3>Accumsan montes viverra</h3>
+                <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non
+                    faucibus ornare mi ut ante amet placerat aliquet. Volutpat e</p>
+            </section>
+            <section>
+                <h4>Sem turpis amet semper</h4>
+                <ul class="alt">
+                    <li><a href="#">Dolor pulvinar sed etiam.</a></li>
+                    <li><a href="#">Etiam vel lorem sed amet.</a></li>
+                    <li><a href="#">Felis enim feugiat viverra.</a></li>
+                    <li><a href="#">Dolor pulvinar magna etiam.</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Magna sed ipsum</h4>
+                <ul class="plain">
+                    <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="copyright">
+            &copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a
+                href="https://coverr.co">Cover</a>.
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
 </body>
 </html>

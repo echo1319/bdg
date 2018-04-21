@@ -109,7 +109,10 @@ var config = {
 
 
 var ctx = document.getElementById("donutChartERPI");
+
 var donutChartERPI = new Chart(ctx, config);
+/*
 
 var ctx2 = document.getElementById("donutChartHumidex");
 var donutChartHumidex = new Chart(ctx2, config);
+*/
