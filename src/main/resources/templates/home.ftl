@@ -31,6 +31,7 @@
     </nav>
 </header>
 
+
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
@@ -50,6 +51,8 @@
     </div>
     <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
 </section>
+
+
 
 <!-- Highlights -->
 <section class="wrapper">
@@ -110,6 +113,10 @@
         </div>
 
 
+        <header class="special">
+            <h2>Μετρησεις</h2>
+        </header>
+
         <div class="highlights">
             <section>
                 <div class="content">
@@ -148,6 +155,28 @@
                         <h3>Κατευθυνση Ανεμου</h3>
                     </header>
                     <h3 style="font-weight: bold">${windDirection}</h3>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon fa-truck-moving"><span class="label">Icon</span></a>
+                        <h3>Διοξειδιο του Ανθρακα</h3>
+                    </header>
+                    <h3 style="font-weight: bold">0.1%</h3>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="content">
+                    <header>
+                        <a href="#" class="icon fa-volume-up"><span class="label">Icon</span></a>
+                        <h3>Ηχορυπανση</h3>
+                    </header>
+                    <h3 style="font-weight: bold">10%</h3>
                 </div>
             </section>
 
@@ -216,33 +245,8 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <div class="content">
-            <section>
-                <h3>Ο Δημος Αθηναιων</h3>
-                <p>Πληροφοριες για τη διοικηση του κηπου</p>
-            </section>
-            <section>
-                <h4>Η ομαδα</h4>
-                <p>Πληροφοριες για την ομαδα</p>
-            </section>
-            <section>
-                <h4>Ο Εθνικος Κηπος</h4>
-                <ul class="plain">
-                    <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                    <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                    <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-                </ul>
-            </section>
-        </div>
-        <div class="copyright">
-            &copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a
-                href="https://coverr.co">Cover</a>.
-        </div>
-    </div>
-</footer>
+
+    <#include "footer.ftl"/>
 
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>

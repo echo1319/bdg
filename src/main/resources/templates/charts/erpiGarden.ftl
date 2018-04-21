@@ -43,7 +43,7 @@
             datasets: [{
                 data: [
                     randomScalingFactor(),
-                    1 - randomScalingFactor()
+                    randomScalingFactor(),
 
                 ],
                 backgroundColor: [
@@ -55,7 +55,7 @@
                 {
                     data: [
                         randomScalingFactor(),
-                        randomScalingFactor()
+                        randomScalingFactor(),
                     ],
                     backgroundColor: [
                         "#46BFBD",

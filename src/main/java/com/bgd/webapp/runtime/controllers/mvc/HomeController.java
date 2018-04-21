@@ -28,4 +28,8 @@ public class HomeController {
     }
 
 
+    @GetMapping(path = "/garden")
+    public String getGarden() {
+        return "garden";
+    }
 }

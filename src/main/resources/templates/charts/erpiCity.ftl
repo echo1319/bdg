@@ -42,9 +42,8 @@
             labels: ["ERPI", "AQI", "Sound", "Temperature"],
             datasets: [{
                 data: [
-                    randomScalingFactor(),
-                    1 - randomScalingFactor()
-
+                    48,
+                     2
                 ],
                 backgroundColor: [
                     "#F7464A",
@@ -54,8 +53,8 @@
             },
                 {
                     data: [
-                        randomScalingFactor(),
-                        randomScalingFactor()
+                        50,
+                        2
                     ],
                     backgroundColor: [
                         "#46BFBD",
