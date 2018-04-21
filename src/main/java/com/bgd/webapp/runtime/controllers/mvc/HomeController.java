@@ -19,9 +19,9 @@ public class HomeController {
     public String getHome(Model model) {
 
         model.addAttribute("windDirection", "NW");
-        model.addAttribute("windSpeed", 200);
+        model.addAttribute("windSpeed", 2);
 
-        model.addAttribute("temperature", 40);
+        model.addAttribute("temperature", 25);
         model.addAttribute("humidity", 50);
 
         return "home";
@@ -32,4 +32,10 @@ public class HomeController {
     public String getGarden() {
         return "garden";
     }
+
+    @GetMapping(path = "/info")
+    public String getInfo() {
+        return "info";
+    }
+
 }

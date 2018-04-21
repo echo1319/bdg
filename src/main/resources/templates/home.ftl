@@ -144,7 +144,7 @@
                         <a href="#" class="icon  fa-wind"><span class="label">Icon</span></a>
                         <h3>Ανεμος</h3>
                     </header>
-                    <h3 style="font-weight: bold">${windSpeed} %</h3>
+                    <h3 style="font-weight: bold">${windSpeed} Km/h</h3>
                 </div>
             </section>
 
