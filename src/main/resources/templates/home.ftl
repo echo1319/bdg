@@ -65,7 +65,7 @@
                 <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
                 <p> Δεικτης ERPI και ΑQI</p>
                 <div class="canvas-holder">
-                    <canvas id="donutChartERPI">
+                    <canvas id="erpiGarden">
                               <#include "charts/erpiGarden.ftl">
                     </canvas>
                 </div>
@@ -76,7 +76,7 @@
                 <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
                 <p> Δεικτης ERPI και ΑQI</p>
                 <div class="canvas-holder">
-                    <canvas id="donutChartHumidex">
+                    <canvas id="erpiCity">
                             <#include "charts/erpiCity.ftl">
                     </canvas>
                 </div>
@@ -90,7 +90,7 @@
                 <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
                 <p> Δεικτης Humidex </p>
                 <div class="canvas-holder">
-                    <canvas id="donutChartERPI">
+                    <canvas id="humidexGarden">
                               <#include "charts/humidexGarden.ftl">
                     </canvas>
                 </div>
@@ -101,7 +101,7 @@
                 <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
                 <p> Δεικτης Humidex </p>
                 <div class="canvas-holder">
-                    <canvas id="donutChartHumidex">
+                    <canvas id="humidexCity">
                             <#include "charts/humidexCity.ftl">
                     </canvas>
                 </div>

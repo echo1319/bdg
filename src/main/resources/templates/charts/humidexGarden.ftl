@@ -109,9 +109,9 @@
     };
 
 
-    var ctx = document.getElementById("donutChartERPI");
+    var ctx = document.getElementById("humidexGarden");
 
-    var donutChartERPI = new Chart(ctx, config);
+    var humidexGarden = new Chart(ctx, config);
 
 </script>
 /*

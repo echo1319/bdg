@@ -109,9 +109,9 @@
     };
 
 
-    var ctx = document.getElementById("donutChartERPI");
+    var ctx = document.getElementById("erpiGarden");
 
-    var donutChartERPI = new Chart(ctx, config);
+    var erpiGarden = new Chart(ctx, config);
 
 </script>
 /*

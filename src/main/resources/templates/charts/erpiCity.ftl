@@ -108,8 +108,8 @@
         }
     };
 
-    var ctx2 = document.getElementById("donutChartHumidex");
-    var donutChartHumidex = new Chart(ctx2, config);
+    var ctx2 = document.getElementById("erpiCity");
+    var erpiCity = new Chart(ctx2, config);
 
 </script>
 
