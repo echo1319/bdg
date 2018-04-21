@@ -14,4 +14,7 @@ public interface AetherGardenRepository extends CrudRepository<GardenAetherMetri
 
     List<GardenAetherMetrics> findAllByDateBetween(LocalDateTime startDate, LocalDateTime endDate);
 
+    List<GardenAetherMetrics> findAllByDateAfterAndDateBefore(LocalDateTime startDate, LocalDateTime endDate);
+
+
 }

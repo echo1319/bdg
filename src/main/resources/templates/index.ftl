@@ -19,7 +19,7 @@ Released   : 20131202
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="../static/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../static/fonts.css" rel="stylesheet" type="text/css" media="all" />
-
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -56,7 +56,7 @@ Released   : 20131202
 				<h2>Nulla eleifend purus</h2>
 				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
 				 </div>
-	
+
 			<div class="ebox1"> <span class="fa fa-pagelines"></span>
 				<div class="title">
 					<h2>Fusce ultrices fringilla</h2>

@@ -12,6 +12,7 @@ public interface AetherCityRepository extends CrudRepository<CityAetherMetrics, 
 
     List<CityAetherMetrics> findAllByDate(LocalDateTime localDateTime);
 
+
     List<CityAetherMetrics> findAllByDateBetween(LocalDateTime startDate, LocalDateTime endDate);
 
 }

@@ -28,7 +28,7 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -81,13 +81,18 @@ https://www.vecteezy.com/vector-art/93066-free-vector-weather-icon-set
             </div>
 
 
-            <div class="canvas-holder-second" style="width:40%; height: 60%; display: inline-block">
+            <#--<div class="canvas-holder-second" style="width:40%; height: 60%; display: inline-block">
                 <canvas id="donutChartHumidex" width="350px;" height="350px; ">
                     <script src="scripts/donut.js" type='text/javascript'></script>
                 </canvas>
-            </div>
+            </div>-->
 
-            <a href="#" class="button">Περισσοτερα</a>
+            <a href="#" class="button" style="display: none" onclick="showInfoDiv()">Περισσοτερα</a>
+
+            <div id="infoDiv" style="display:none;" class="infoDiv"></div>
+
+
+            <div> Ο Δείκτης AQI</div>
         </div>
     </div>
 </div>

@@ -24,6 +24,17 @@ var randomScalingFactor = function () {
     return Math.round(Math.random() * 100);
 };
 
+var fetchErpiData = function () {
+   return 48;
+}
+
+var fetchData = function () {
+    $.getJSON('metrics/garden/aqi', function (data) {
+        console.log("data are" + data);
+        return data.value;
+    });
+}
+
 var config = {
     type: 'doughnut',
     data: {
@@ -31,7 +42,7 @@ var config = {
         datasets: [{
             data: [
                 randomScalingFactor(),
-                randomScalingFactor()
+                1 - randomScalingFactor()
 
             ],
             backgroundColor: [

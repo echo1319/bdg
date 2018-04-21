@@ -1,6 +1,7 @@
 package com.bgd.webapp.runtime.calculators.aqi;
 
 import com.bgd.webapp.api.calculators.AqiCalculator;
+import com.bgd.webapp.api.dto.AetherMetrics;
 import com.bgd.webapp.api.indices.AQI;
 import com.bgd.webapp.api.indices.AQI_AIR_QUALITY;
 import com.bgd.webapp.api.indices.POLLUTION_FACTORS;
@@ -30,12 +31,12 @@ public class AirQualityIndexCalculator {
     private AirQualityCalculator airQualityCalculator;
 
 
-    public AQI calculateAQI(double PM10Index, double O3Index, double NO2Index, double COIndex, double SO2Index) {
-        double pm10Aqi = pm10Calculator.computeAQI(PM10Index);
-        double soAqi = so2Calculator.computeAQI(SO2Index);
-        double o3Aqi = o3Calculator.computeAQI(O3Index);
-        double no2Aqi = no2Calculator.computeAQI(NO2Index);
-        double coAqi = coCalculator.computeAQI(COIndex);
+    public AQI calculateAQI(AetherMetrics aetherMetrics) {
+        double pm10Aqi = pm10Calculator.computeAQI(aetherMetrics.getPM10());
+        double soAqi = so2Calculator.computeAQI(aetherMetrics.getSO2());
+        double o3Aqi = o3Calculator.computeAQI(aetherMetrics.getO3());
+        double no2Aqi = no2Calculator.computeAQI(aetherMetrics.getNO2());
+        double coAqi = coCalculator.computeAQI(aetherMetrics.getCO());
 
         ImmutableMap<POLLUTION_FACTORS, Double> indexMap = ImmutableMap.of(
             POLLUTION_FACTORS.PM10, pm10Aqi, POLLUTION_FACTORS.O3, o3Aqi,
@@ -49,7 +50,6 @@ public class AirQualityIndexCalculator {
         return new AQI(Math.round(aqiIndex.getValue()), airQualityStatus, aqiIndex.getKey());
 
     }
-
 
     private Map.Entry<POLLUTION_FACTORS, Double> chooseMaxIndex(Map<POLLUTION_FACTORS, Double> indexMap) {
         return indexMap.entrySet()
