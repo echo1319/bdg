@@ -120,7 +120,7 @@
 
 
 
-        <#include "footer.ftl"/>
+        <#include "partial/footer.ftl"/>
 
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>

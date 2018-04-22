@@ -1,5 +1,5 @@
 <script>
-    Chart.plugins.register({
+   /* Chart.plugins.register({
         beforeDraw: function (chart) {
             var data = chart.data.datasets[0].data;
             var sum = data.reduce(function (a, b) {
@@ -18,7 +18,7 @@
             ctx.fillText(text, textX, textY);
             ctx.save();
         }
-    });
+    });*/
 
 
     var randomScalingFactor = function () {
@@ -39,7 +39,7 @@
     var config = {
         type: 'doughnut',
         data: {
-            labels: ["ERPI", "AQI", "Sound", "Temperature"],
+            labels: ["ERPI", "AQI"],
             datasets: [{
                 data: [
                     randomScalingFactor(),
@@ -51,44 +51,17 @@
                     "#FFFFFF"
                 ],
                 labels: ['ERPI']
-            },
-                {
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                    ],
-                    backgroundColor: [
-                        "#46BFBD",
-                        "#FFFFFF"
-                    ],
-                    labels: ['AQI']
-                },
-                {
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor()
-
-                    ],
-                    backgroundColor: [
-
-                        "#FDB45C",
-                        "#FFFFFF"
-                    ],
-                    labels: ['Sound']
-                },
-
-                {
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor()
-
-                    ],
-                    backgroundColor: [
-                        "#949FB1",
-                        "#FFFFFF"
-                    ],
-                    labels: ['Temperature']
-                }],
+            },  {
+                data: [
+                    50,
+                    2
+                ],
+                backgroundColor: [
+                    "#46BFBD",
+                    "#FFFFFF"
+                ],
+                labels: ['AQI']
+            }],
         },
         options: {
             responsive: true,
