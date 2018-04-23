@@ -42,8 +42,9 @@
             labels: ["ERPI", "AQI"],
             datasets: [{
                 data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
+                    17,
+                    33
+
 
                 ],
                 backgroundColor: [

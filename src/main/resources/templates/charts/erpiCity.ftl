@@ -24,7 +24,7 @@
             },
                 {
                     data: [
-                        50,
+                        55,
                         2
                     ],
                     backgroundColor: [

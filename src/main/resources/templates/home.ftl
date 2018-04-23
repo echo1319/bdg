@@ -32,14 +32,16 @@
     <div class="inner">
         <header class="special">
             <h2>Ατμοσφαιρικες συνθηκες</h2>
-            <p>Η ποιότητα της ατμόσφαιρας στον Κήπο, συγκρινόμενη με τις αντίστοιχες συνθήκες στο κέντρο της πόλης.</p>
+            <p>Η ποιότητα της ατμόσφαιρας στον Κήπο, συγκρινόμενη με τις αντίστοιχες συνθήκες στο κέντρο της Πόλης.</p>
         </header>
 
 
         <div class="highlights">
             <div class="content" style="width: 50%;">
                 <h3>Ποιότητα ατμόσφαιρας στον Κήπο</h3>
-                <p> Δεικτης ERPI και ΑQI</p>
+
+                <p> Δείκτης  <a href="#"  style="text-decoration: none" data-toggle="tooltip" title="European Quality Index "> ERPI </a> και <a href="#" data-toggle="tooltip" style="text-decoration: none" title="Air Quality Index "> ΑQI</a> </p>
+
                 <div class="canvas-holder">
                     <canvas id="erpiGarden">
                               <#include "charts/erpiGarden.ftl">
@@ -53,7 +55,7 @@
             <div class="content" style="width: 50%;">
 
                 <h3>Ποιότητα ατμόσφαιρας στο Σύνταγμα</h3>
-                <p> Δεικτης ERPI και ΑQI</p>
+                <p> Δείκτης  <a href="#"  style="text-decoration: none" data-toggle="tooltip" title="European Quality Index "> ERPI </a> και <a href="#" data-toggle="tooltip" style="text-decoration: none" title="Air Quality Index "> ΑQI</a> </p>
 
                 <div class="canvas-holder">
                     <canvas id="erpiCity">
@@ -71,7 +73,8 @@
         <div class="highlights">
             <div class="content" style="width: 50%;">
                 <h3>Θερμική Αίσθηση στον Κήπο</h3>
-                <p> Δεικτης Humidex </p>
+                <p> Δείκτης  <a href="#"  style="text-decoration: none" data-toggle="tooltip" title="Thermal Indicator "> Humidex </a> </p>
+
                 <div class="canvas-holder">
                     <canvas id="humidexGarden">
                               <#include "charts/humidexGarden.ftl">
@@ -84,7 +87,8 @@
 
             <div class="content" style="width: 50%;">
                 <h3>Θερμική Αίσθηση στο Σύνταγμα </h3>
-                <p> Δεικτης Humidex </p>
+                <p> Δείκτης  <a href="#"  style="text-decoration: none" data-toggle="tooltip" title="Thermal Indicator "> Humidex </a> </p>
+
                 <div class="canvas-holder-humidexCity">
                     <canvas id="humidexCity">
                             <#include "charts/humidexCity.ftl">
@@ -100,8 +104,7 @@
     </div>
 </section>
 
-
-
+    <#include "partial/indices.ftl"/>
     <#include "partial/experience.ftl"/>
 
     <#include "partial/footer.ftl"/>
@@ -112,6 +115,10 @@
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
-
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 </body>
 </html>

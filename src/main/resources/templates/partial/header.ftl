@@ -14,8 +14,8 @@
         <li><a href="/">Αρχική</a></li>
         <li><a href="/garden">Ο Κήπος</a></li>
         <li><a href="/info">Ποιότητα Ατμόσφαιρας</a></li>
-        <li><a href="/team">Η ομάδα</a></li>
-        <li><a href="/contact">Επικοινωνία</a></li>
+        <li><a href="#">Η ομάδα</a></li>
+        <li><a href="#">Επικοινωνία</a></li>
 
     </ul>
 </nav>

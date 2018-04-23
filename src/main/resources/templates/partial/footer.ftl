@@ -3,15 +3,15 @@
     <div class="inner">
         <div class="content">
             <section>
-                <h3>Ο Δημος Αθηναιων</h3>
-                <p>Πληροφοριες για τη διοικηση του κηπου</p>
+                <h3>Ο Δήμος Αθηναίων</h3>
+                <p>Πληροφορίες για τη διοίκηση του κήπου</p>
             </section>
             <section>
-                <h4>Η ομαδα</h4>
-                <p>Πληροφοριες για την ομαδα</p>
+                <h4>Η ομάδα</h4>
+                <p>Πληροφορίες για την ομάδα</p>
             </section>
             <section>
-                <h4>Ο Εθνικος Κηπος</h4>
+                <h4>Ο Εθνικός Κήπος</h4>
                 <ul class="plain">
                     <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
                     <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
@@ -19,9 +19,9 @@
                 </ul>
             </section>
         </div>
-        <div class="copyright">
+       <#-- <div class="copyright">
             &copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a
                 href="https://coverr.co">Cover</a>.
-        </div>
+        </div>-->
     </div>
 </footer>
